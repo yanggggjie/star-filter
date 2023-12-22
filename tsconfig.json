@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+//    note for vercel node
+//    "moduleResolution": "bundler",
+//    "allowImportingTsExtensions": true,
+//    note
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+//    "noUnusedLocals": true,
+//    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+
+    /* 宽松的配置 */
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "checkJs": false,
+    "allowUnusedLabels": true,
+    "allowJs": true,
+
+    //    更好地支持ES6的导入导出
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    //    更好地支持ES6的导入导出
+
+//    别名
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+// for vercel
+    "moduleResolution": "Node",
+
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

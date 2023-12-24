@@ -14,7 +14,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-
     // 宽松的配置
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -22,7 +21,8 @@ module.exports = {
     "no-unused-vars": "off",
     // 箭头函数始终使用完整的return
     "arrow-parens": ["error", "always"],
-    "arrow-body-style": ["error", "always"]
-    // 箭头函数始终使用完整的return
+    "arrow-body-style": ["error", "always"],
+    // 关闭typescript ignore
+    "@typescript-eslint/ban-ts-comment": "off"
   },
 }

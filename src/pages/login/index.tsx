@@ -1,9 +1,20 @@
 import _ from 'lodash'
 import { clsx } from 'clsx'
-import { Link } from '@tanstack/react-router'
+import { Link, useNavigate } from 'react-router-dom'
+import { useToken } from '@/store/useToken'
+import { useEffect } from 'react'
 interface Props {}
 
 export default function Index({}: Props) {
+  const { token } = useToken()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (token) {
+      navigate('/')
+    }
+  }, [token])
+
   return (
     <div>
       <div>in login</div>

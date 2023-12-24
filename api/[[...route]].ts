@@ -15,8 +15,6 @@ app.get('/hello', (c) => {
 app.get('/exchange-token', async (c) => {
   const code = c.req.query('code')
 
-  console.log('env', process.env)
-
   const res = await ofetch('https://github.com/login/oauth/access_token', {
     method: 'POST',
     headers: {
@@ -24,16 +22,12 @@ app.get('/exchange-token', async (c) => {
     },
     body: {
       client_id: process.env.VITE_CLIENT_ID,
-      client_secret: 'a6d0f1b5b4f1e0c9e4d5f6a7a8c9d0e1f2a3b4c5',
+      client_secret: process.env.CLIENT_SECRET,
       code,
     },
   })
 
-  console.log('code', code)
-
-  return c.json({
-    token: 123,
-  })
+  return c.json(res)
 })
 
 export const GET = handle(app)

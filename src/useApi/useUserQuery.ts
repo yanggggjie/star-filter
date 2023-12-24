@@ -44,7 +44,6 @@ function useUserQuery() {
   const isRestoring = useIsRestoring()
   const { data, isLoading, error } = useQuery<IUser>({
     queryKey: ['user'],
-    placeholderData: keepPreviousData,
     queryFn: async () => {
       return await globalOfetch('user')
     },
